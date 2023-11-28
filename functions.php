@@ -17,7 +17,7 @@ function my_theme_enqueue_styles() {
 
 function dmeng_get_https_avatar($avatar) {
 	//~ 替换为 https 的域名
-	$avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com", "secure.gravatar.com"), "gravatar.yipai.me", $avatar);
+	$avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com", "secure.gravatar.com"), "gravatar.muddyflow.com", $avatar);
 	//~ 替换为 https 协议
 	$avatar = str_replace("http://", "https://", $avatar);
 	return $avatar;
@@ -31,4 +31,5 @@ add_filter( 'comment_excerpt_length', function($length) {
 function mytheme_custom_excerpt_length( $length ) {
     return 140;
 }
-add_filter( 'excerpt_length', 'mytheme_custom_excerpt_length', 999 );
+add_filter('excerpt_length', 'mytheme_custom_excerpt_length', 999);
+add_filter('jpeg_quality', function($arg){return 100;});
